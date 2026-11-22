@@ -13,17 +13,18 @@
 <meta property="og:description" content="Statistics & Informatics at the University of Washington. Data analysis, ML research, and web projects.">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://eloisehe.here/photo.jpg">
-<meta name="theme-color" content="#FAFAF9">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23DC9FB4'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3EEH%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#E0E1DD">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231B263B'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3EEH%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Eloise He","alternateName":"Xitong He","url":"https://eloisehe.here/","jobTitle":"Data Analyst","affiliation":{"@type":"CollegeOrUniversity","name":"University of Washington"},"sameAs":["https://github.com/xitong-eloise-he","https://www.linkedin.com/in/xitong-he-2061763b2/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 :root{
-  --bg:#FAFAF9; --panel:#FFFFFF; --text:#33353a; --muted:#6e7076; --line:#e6e6e3;
-  --pink:#FEDFE1; --pink2:#DC9FB4; --greige:#D7C4BB; --greige-dark:#c8b2a7;
-  --aqua:#A5DEE4; --aqua-soft:#eaf5f7; --accent:#8c6e6e; --heading:#1f2125; --body:#4a4c52;
+  --bg:#EDEEEA; --panel:#F7F7F4; --text:#1B263B; --muted:#5f6b7c; --line:#d3d5cf;
+  --stone:#E0E1DD; --khaki:#B3AF8F; --khaki-soft:#e6e3d3; --slate:#415A77; --navy:#1B263B; --ink:#0D1B2A;
+  --pink:var(--khaki-soft); --pink2:var(--khaki); --greige:var(--navy); --greige-dark:var(--ink);
+  --aqua:#9fb0c4; --aqua-soft:#e3e8ee; --accent:#415A77; --heading:#0D1B2A; --body:#2e3a4d;
   --sans:"Inter","Noto Sans SC",-apple-system,system-ui,sans-serif;
   --display:"Outfit","Noto Sans SC",-apple-system,system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -36,17 +37,17 @@ a{color:inherit}
 [hidden]{display:none!important}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:10;background:rgba(237,238,234,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
 .brand{font-family:var(--display);font-weight:700;font-size:1.05rem;text-decoration:none;color:var(--heading)}
 .nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;align-items:center}
-.nav ul a{text-decoration:none;color:#55575d;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
 .nav ul a:hover,.nav ul a.on{color:var(--heading);border-color:var(--heading)}
 .lang{font:500 .8rem var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;color:var(--muted)}
-.lang:hover{border-color:var(--greige)}
+.lang:hover{border-color:var(--slate)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#dfeaf0 0%,#edf3f6 55%,var(--bg) 100%);padding:56px 0 72px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#cdd4dc 0%,#e0e2df 60%,var(--bg) 100%);padding:56px 0 72px}
 .cloud{position:absolute;background:#fff;border-radius:999px;opacity:.85;filter:blur(.3px);animation:drift 60s linear infinite}
 .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
 .cloud::before{width:55%;height:150%;left:14%;bottom:20%}
@@ -55,20 +56,20 @@ a{color:inherit}
 .c2{width:140px;height:46px;top:70px;right:9%;animation-duration:80s;animation-direction:reverse}
 .c3{width:80px;height:28px;top:250px;left:72%;animation-duration:70s;opacity:.6}
 @keyframes drift{0%{transform:translateX(0)}50%{transform:translateX(40px)}100%{transform:translateX(0)}}
-.bird{position:absolute;width:14px;height:6px;border:1.6px solid #7d8187;border-color:#7d8187 transparent transparent;border-radius:50% 50% 0 0;opacity:.7}
-.bird::after{content:"";position:absolute;left:11px;top:-1.6px;width:14px;height:6px;border:1.6px solid #7d8187;border-color:#7d8187 transparent transparent;border-radius:50% 50% 0 0}
+.bird{position:absolute;width:14px;height:6px;border:1.6px solid #415A77;border-color:#415A77 transparent transparent;border-radius:50% 50% 0 0;opacity:.7}
+.bird::after{content:"";position:absolute;left:11px;top:-1.6px;width:14px;height:6px;border:1.6px solid #415A77;border-color:#415A77 transparent transparent;border-radius:50% 50% 0 0}
 .avatar{position:relative;width:200px;height:200px;margin:0 auto 40px;border-radius:50%;padding:6px;background:#fff;box-shadow:0 0 0 1px var(--line),0 16px 36px rgba(30,35,45,.12)}
 .avatar>div{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,var(--pink) 55%,var(--pink2));font:800 3.6rem var(--display);color:#fff;letter-spacing:.02em;text-shadow:0 2px 8px rgba(158,122,122,.35);overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
-.pill{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);color:#55575d;background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:999px;padding:5px 13px}
-.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#7fbfc7}
+.pill{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);color:var(--navy);background:rgba(247,247,244,.85);border:1px solid var(--line);border-radius:999px;padding:5px 13px}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--khaki)}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,7vw,4rem);line-height:1.05;margin:20px 0 10px;color:var(--heading);letter-spacing:-.02em}
 .role{font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,3vw,1.55rem);color:var(--accent);margin:0 0 18px}
 .lede{max-width:620px;font-size:1.08rem;color:var(--body);margin:0 0 28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:.95rem;padding:11px 18px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--heading);transition:transform .15s,border-color .15s}
-.btn:hover{transform:translateY(-1px);border-color:var(--greige)}
-.btn.primary{background:var(--greige);border-color:var(--greige);color:var(--heading)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:.95rem;padding:11px 18px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--heading);transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--slate)}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:var(--stone)}
 .btn.primary:hover{background:var(--greige-dark)}
 .btn svg{width:17px;height:17px}
 
@@ -108,13 +109,13 @@ section.block{padding:72px 0}
 .links a{color:var(--accent);text-decoration:none;font-weight:500}
 .links a:hover{text-decoration:underline}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
-.tags span{font:500 .74rem var(--mono);background:var(--aqua-soft);color:#4b7e85;border-radius:6px;padding:3px 8px}
+.tags span{font:500 .74rem var(--mono);background:var(--aqua-soft);color:var(--slate);border-radius:6px;padding:3px 8px}
 
 
 .thumb.auto{position:relative;background:var(--c1)}
 .thumb.auto::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.7) 0 18%,transparent 19%),radial-gradient(circle at 80% 70%,var(--c2) 0 22%,transparent 23%),radial-gradient(circle at 65% 20%,rgba(255,255,255,.45) 0 9%,transparent 10%)}
 .thumb.auto span{position:relative;font:800 2.4rem var(--display);color:var(--heading);opacity:.85;letter-spacing:-.01em;padding:0 20px;text-align:center;line-height:1.1;word-break:break-word}
-.card.new .yr::after{content:"NEW";margin-left:8px;font-size:.68rem;background:var(--pink);color:var(--accent);border-radius:4px;padding:1px 6px}
+.card.new .yr::after{content:"NEW";margin-left:8px;font-size:.68rem;background:var(--khaki-soft);color:var(--navy);border-radius:4px;padding:1px 6px}
 
 /* about */
 .about{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:start}
@@ -123,14 +124,14 @@ section.block{padding:72px 0}
 .facts h4{font:500 .78rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
 .facts .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
 .facts .chips:last-child{margin-bottom:0}
-.facts .chips span{font-size:.86rem;background:#f4f4f2;border:1px solid var(--line);border-radius:999px;padding:3px 11px}
+.facts .chips span{font-size:.86rem;background:var(--stone);border:1px solid var(--line);border-radius:999px;padding:3px 11px}
 
 /* experience */
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .item{position:relative;padding-bottom:34px}
 .item:last-child{padding-bottom:0}
-.item::before{content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--greige-dark)}
+.item::before{content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--panel);border:2px solid var(--khaki)}
 .when{font:500 .8rem var(--mono);color:var(--muted)}
 .item h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:4px 0 8px;color:var(--heading)}
 .item h3 span{color:var(--accent);font-weight:500}
@@ -138,9 +139,13 @@ section.block{padding:72px 0}
 .item li{margin-bottom:4px}
 
 /* contact */
-.contact{background:linear-gradient(135deg,#f1f3f4,#f7f7f6 60%,var(--aqua-soft));border:1px solid var(--line);border-radius:20px;padding:44px;text-align:center}
-.contact h3{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0 0 10px;color:var(--heading)}
-.contact p{margin:0 auto 24px;max-width:480px;color:var(--body)}
+.contact{background:linear-gradient(135deg,var(--ink),var(--navy) 60%,#26364f);border:1px solid var(--ink);color:var(--stone);border-radius:20px;padding:44px;text-align:center}
+.contact h3{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0 0 10px;color:var(--stone)}
+.contact p{margin:0 auto 24px;max-width:480px;color:#b9c1cc}
+.contact .btn{background:transparent;color:var(--stone);border-color:#415A77}
+.contact .btn:hover{border-color:var(--khaki)}
+.contact .btn.primary{background:var(--khaki);border-color:var(--khaki);color:var(--ink)}
+.contact .btn.primary:hover{background:#c4c0a2}
 .contact .cta{justify-content:center}
 footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem}
 
@@ -208,16 +213,16 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
     <div class="grid" id="grid">
 
       <article class="card reveal">
-        <div class="thumb" style="background:#f6efef">
+        <div class="thumb" style="background:#e6e3d3">
           <svg viewBox="0 0 320 180" aria-hidden="true">
-            <rect x="85" y="15" width="150" height="150" rx="6" fill="#fbf7f6"/>
-            <g stroke="#c9a6a8" stroke-width="1">
+            <rect x="85" y="15" width="150" height="150" rx="6" fill="#f4f3ec"/>
+            <g stroke="#b8b49a" stroke-width="1">
               <path d="M95 25h130M95 43.6h130M95 62.1h130M95 80.7h130M95 99.3h130M95 117.9h130M95 136.4h130M95 155h130"/>
               <path d="M95 25v130M113.6 25v130M132.1 25v130M150.7 25v130M169.3 25v130M187.9 25v130M206.4 25v130M225 25v130"/>
             </g>
-            <g fill="#fff" stroke="#b9999a" stroke-width="1"><circle cx="113.6" cy="43.6" r="7.5"/><circle cx="132.1" cy="62.1" r="7.5"/><circle cx="150.7" cy="80.7" r="7.5"/><circle cx="169.3" cy="99.3" r="7.5"/><circle cx="187.9" cy="117.9" r="7.5"/><circle cx="150.7" cy="117.9" r="7.5"/></g>
-            <g fill="#A5DEE4" stroke="#80c2cb" stroke-width="1"><circle cx="169.3" cy="80.7" r="7.5"/><circle cx="132.1" cy="99.3" r="7.5"/><circle cx="187.9" cy="99.3" r="7.5"/><circle cx="169.3" cy="62.1" r="7.5"/></g>
-            <path d="M113.6 43.6 187.9 117.9" stroke="#9E7A7A" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            <g fill="#fff" stroke="#8f8b6e" stroke-width="1"><circle cx="113.6" cy="43.6" r="7.5"/><circle cx="132.1" cy="62.1" r="7.5"/><circle cx="150.7" cy="80.7" r="7.5"/><circle cx="169.3" cy="99.3" r="7.5"/><circle cx="187.9" cy="117.9" r="7.5"/><circle cx="150.7" cy="117.9" r="7.5"/></g>
+            <g fill="#7f95ae" stroke="#415A77" stroke-width="1"><circle cx="169.3" cy="80.7" r="7.5"/><circle cx="132.1" cy="99.3" r="7.5"/><circle cx="187.9" cy="99.3" r="7.5"/><circle cx="169.3" cy="62.1" r="7.5"/></g>
+            <path d="M113.6 43.6 187.9 117.9" stroke="#1B263B" stroke-width="3" stroke-linecap="round" opacity=".8"/>
           </svg>
         </div>
         <div class="cb">
@@ -230,19 +235,19 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
       </article>
 
       <article class="card reveal">
-        <div class="thumb" style="background:#e6f6f8">
+        <div class="thumb" style="background:#dfe4ea">
           <svg viewBox="0 0 320 180" aria-hidden="true">
-            <rect x="92" y="18" width="144" height="144" rx="6" fill="#fff" stroke="#9E7A7A" stroke-width="2"/>
-            <g stroke="#e3d6d0" stroke-width="1"><path d="M108 18v144M124 18v144M156 18v144M172 18v144M204 18v144M220 18v144M92 34h144M92 50h144M92 82h144M92 98h144M92 130h144M92 146h144"/></g>
-            <g stroke="#9E7A7A" stroke-width="1.6"><path d="M140 18v144M188 18v144M92 66h144M92 114h144"/></g>
-            <rect x="156" y="66" width="16" height="16" fill="#A5DEE4"/>
-            <rect x="140" y="66" width="96" height="16" fill="#A5DEE4" opacity=".25"/>
-            <g font-family="Outfit,sans-serif" font-size="11" fill="#4f3b3c" text-anchor="middle">
+            <rect x="92" y="18" width="144" height="144" rx="6" fill="#fff" stroke="#1B263B" stroke-width="2"/>
+            <g stroke="#d6d3c2" stroke-width="1"><path d="M108 18v144M124 18v144M156 18v144M172 18v144M204 18v144M220 18v144M92 34h144M92 50h144M92 82h144M92 98h144M92 130h144M92 146h144"/></g>
+            <g stroke="#1B263B" stroke-width="1.6"><path d="M140 18v144M188 18v144M92 66h144M92 114h144"/></g>
+            <rect x="156" y="66" width="16" height="16" fill="#7f95ae"/>
+            <rect x="140" y="66" width="96" height="16" fill="#7f95ae" opacity=".25"/>
+            <g font-family="Outfit,sans-serif" font-size="11" fill="#0D1B2A" text-anchor="middle">
               <text x="100" y="30">5</text><text x="116" y="30">3</text><text x="164" y="30">7</text>
               <text x="100" y="46">6</text><text x="148" y="46">1</text><text x="164" y="46">9</text><text x="180" y="46">5</text>
               <text x="116" y="62">9</text><text x="132" y="62">8</text><text x="228" y="62">6</text>
               <text x="100" y="78">8</text><text x="148" y="78">6</text><text x="212" y="78">3</text>
-              <text x="164" y="78" fill="#3d8d97" font-weight="700">2</text>
+              <text x="164" y="78" fill="#415A77" font-weight="700">2</text>
               <text x="100" y="94">4</text><text x="164" y="94">8</text><text x="196" y="94">3</text><text x="228" y="94">1</text>
               <text x="100" y="110">7</text><text x="148" y="110">2</text><text x="228" y="110">6</text>
               <text x="116" y="126">6</text><text x="212" y="126">2</text><text x="228" y="126">8</text>
@@ -261,17 +266,17 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
       </article>
 
       <article class="card reveal">
-        <div class="thumb" style="background:linear-gradient(135deg,#f3f1ee,#f4ecec)">
+        <div class="thumb" style="background:linear-gradient(135deg,#e6e3d3,#dfe4ea)">
           <svg viewBox="0 0 320 180" aria-hidden="true">
-            <path d="M150 165V95c0-14-6-22-18-30M150 110c10-10 22-14 34-14M150 95V60" stroke="#9E7A7A" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <circle cx="150" cy="50" r="38" fill="#DC9FB4" opacity=".55"/>
-            <circle cx="122" cy="62" r="28" fill="#D7C4BB" opacity=".8"/>
-            <circle cx="186" cy="74" r="30" fill="#A5DEE4" opacity=".7"/>
-            <ellipse cx="151" cy="128" rx="7" ry="10" fill="#4f3b3c" opacity=".8"/>
+            <path d="M150 165V95c0-14-6-22-18-30M150 110c10-10 22-14 34-14M150 95V60" stroke="#1B263B" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <circle cx="150" cy="50" r="38" fill="#B3AF8F" opacity=".55"/>
+            <circle cx="122" cy="62" r="28" fill="#c9c5aa" opacity=".8"/>
+            <circle cx="186" cy="74" r="30" fill="#7f95ae" opacity=".7"/>
+            <ellipse cx="151" cy="128" rx="7" ry="10" fill="#0D1B2A" opacity=".8"/>
             <rect x="196" y="112" width="74" height="30" rx="10" fill="#fff"/><path d="M204 142l-6 9 14-9" fill="#fff"/>
-            <rect x="206" y="121" width="44" height="4" rx="2" fill="#D7C4BB"/><rect x="206" y="130" width="30" height="4" rx="2" fill="#e8dcd6"/>
+            <rect x="206" y="121" width="44" height="4" rx="2" fill="#c9c5aa"/><rect x="206" y="130" width="30" height="4" rx="2" fill="#dcdacb"/>
             <rect x="46" y="96" width="62" height="26" rx="10" fill="#fff"/><path d="M98 122l6 8-12-8" fill="#fff"/>
-            <rect x="55" y="104" width="38" height="4" rx="2" fill="#DC9FB4"/><rect x="55" y="112" width="24" height="4" rx="2" fill="#efd9df"/>
+            <rect x="55" y="104" width="38" height="4" rx="2" fill="#B3AF8F"/><rect x="55" y="112" width="24" height="4" rx="2" fill="#e3e8ee"/>
           </svg>
         </div>
         <div class="cb">
@@ -284,16 +289,16 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
       </article>
 
       <article class="card reveal">
-        <div class="thumb" style="background:#f3f4f4">
+        <div class="thumb" style="background:#e3e5e0">
           <svg viewBox="0 0 320 180" aria-hidden="true">
-            <g fill="#fff" stroke="#D7C4BB" stroke-width="1.5">
+            <g fill="#fff" stroke="#c9c5aa" stroke-width="1.5">
               <rect x="40" y="40" width="34" height="22" rx="5"/><rect x="40" y="70" width="34" height="22" rx="5"/><rect x="40" y="100" width="34" height="22" rx="5"/><rect x="40" y="130" width="34" height="22" rx="5"/>
-              <rect x="82" y="40" width="34" height="22" rx="5"/><rect x="82" y="70" width="34" height="22" rx="5" fill="#A5DEE4" stroke="#80c2cb"/><rect x="82" y="100" width="34" height="22" rx="5"/><rect x="82" y="130" width="34" height="22" rx="5"/>
+              <rect x="82" y="40" width="34" height="22" rx="5"/><rect x="82" y="70" width="34" height="22" rx="5" fill="#7f95ae" stroke="#415A77"/><rect x="82" y="100" width="34" height="22" rx="5"/><rect x="82" y="130" width="34" height="22" rx="5"/>
             </g>
-            <path d="M118 81C150 81 150 96 178 96" stroke="#9E7A7A" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
-            <circle cx="186" cy="96" r="10" fill="#DC9FB4"/>
-            <g fill="#D7C4BB"><rect x="212" y="108" width="14" height="40" rx="3"/><rect x="232" y="88" width="14" height="60" rx="3"/><rect x="252" y="72" width="14" height="76" rx="3" fill="#A5DEE4"/><rect x="272" y="98" width="14" height="50" rx="3"/></g>
-            <path d="M206 148h86" stroke="#9E7A7A" stroke-width="1.5"/>
+            <path d="M118 81C150 81 150 96 178 96" stroke="#1B263B" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+            <circle cx="186" cy="96" r="10" fill="#B3AF8F"/>
+            <g fill="#c9c5aa"><rect x="212" y="108" width="14" height="40" rx="3"/><rect x="232" y="88" width="14" height="60" rx="3"/><rect x="252" y="72" width="14" height="76" rx="3" fill="#7f95ae"/><rect x="272" y="98" width="14" height="50" rx="3"/></g>
+            <path d="M206 148h86" stroke="#1B263B" stroke-width="1.5"/>
           </svg>
         </div>
         <div class="cb">
@@ -308,7 +313,7 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
   </div>
 </section>
 
-<section class="block" id="about" style="background:#fff;border-block:1px solid var(--line)">
+<section class="block" id="about" style="background:var(--stone);border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="sh reveal"><span class="n">02</span><h2 data-i="nAbout">About</h2></div>
     <div class="about">
@@ -507,7 +512,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   // Repos already shown as hand-made cards above, plus this site's own repo.
   const SKIP = new Set(['gomoku', 'sudoku', 'treehole', USER + '.github.io']);
   const HIDE_TOPIC = 'hide-from-site';   // add this topic on GitHub to keep a repo off the site
-  const PALETTE = [['#f3f4f4','#D7C4BB'], ['#eaf5f7','#A5DEE4'], ['#f3f1ee','#D7C4BB'], ['#f6efef','#e3c9d2'], ['#eef3f4','#c9dadd']];
+  const PALETTE = [['#e3e5e0','#c9c5aa'], ['#e3e8ee','#7f95ae'], ['#e6e3d3','#c9c5aa'], ['#e6e3d3','#B3AF8F'], ['#e0e1dd','#9fb0c4']];
   const CACHE = 'gh-repos-v1';
   const grid = document.getElementById('grid'), count = document.getElementById('projCount');
   const base = grid.querySelectorAll('article.card').length;
