@@ -24,7 +24,7 @@
   --bg:#FBFBF9; --panel:#FFFFFF; --text:#1B263B; --muted:#66707e; --line:#e6e7e3;
   --stone:#F4F4F1; --khaki:#B3AF8F; --khaki-soft:#e6e3d3; --slate:#415A77; --navy:#1B263B; --ink:#0D1B2A;
   --pink:var(--khaki-soft); --pink2:var(--khaki); --greige:var(--navy); --greige-dark:var(--ink);
-  --aqua:#9fb0c4; --aqua-soft:#e3e8ee; --accent:#415A77; --heading:#0D1B2A; --body:#3b4657;
+  --aqua:#9fb0c4; --aqua-soft:#e3e8ee; --accent:#415A77; --heading:#0D1B2A; --pop:#C2553A; --pop-dark:#a8452d; --pop-soft:rgba(194,85,58,.18); --body:#3b4657;
   --sans:"Inter","Noto Sans SC",-apple-system,system-ui,sans-serif;
   --display:"Outfit","Noto Sans SC",-apple-system,system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -62,26 +62,34 @@ a{color:inherit}
 .avatar>div{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,var(--pink) 55%,var(--pink2));font:800 3.6rem var(--display);color:#fff;letter-spacing:.02em;text-shadow:0 2px 8px rgba(158,122,122,.35);overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 .pill{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px}
-.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--khaki)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pop);box-shadow:0 0 0 3px var(--pop-soft)}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,7vw,4rem);line-height:1.05;margin:20px 0 10px;color:var(--heading);letter-spacing:-.02em}
 .role{font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,3vw,1.55rem);color:var(--accent);margin:0 0 18px}
 .lede{max-width:620px;font-size:1.08rem;color:var(--body);margin:0 0 28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:.95rem;padding:11px 18px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--heading);transition:transform .15s,border-color .15s}
 .btn:hover{transform:translateY(-1px);border-color:var(--slate)}
-.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
-.btn.primary:hover{background:var(--greige-dark)}
+.btn.primary{background:var(--pop);border-color:var(--pop);color:#fff}
+.btn.primary:hover{background:var(--pop-dark);border-color:var(--pop-dark)}
 .btn svg{width:17px;height:17px}
 
 
 .hero{padding:130px 0 96px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:56px;position:relative;z-index:1}
-.hero-grid .avatar{order:2;width:320px;height:320px;margin:0}
+.portrait{order:2;position:relative;width:330px;height:330px;margin:10px 40px 10px 0}
+.portrait .avatar{width:100%;height:100%;margin:0;z-index:2}
 .hero-text{order:1}
 .hero .lede{font-size:1.15rem;line-height:1.7}
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;gap:28px}
-  .hero-grid .avatar{order:0;width:200px;height:200px;margin:0 auto}
+  .portrait{order:0;width:210px;height:210px;margin:10px auto 34px}
+  .sticker{font-size:.72rem!important;padding:5px 9px!important}
+  .hi-bar{grid-template-columns:repeat(2,1fr)!important}
+  .hi-bar li:nth-child(2){border-right:0!important}
+  .hi-bar li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .stats{grid-template-columns:repeat(2,1fr)!important}
+  .tabs{width:100%;justify-content:space-between}
+  .tabs button{padding:7px 10px;font-size:.8rem}
 }
 
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(27,38,59,.13) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%);mask-image:linear-gradient(180deg,#000 0%,transparent 85%);pointer-events:none}
@@ -89,6 +97,54 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,7vw,4rem);l
 .card,.facts{box-shadow:0 1px 2px rgba(13,27,42,.04),0 6px 18px rgba(13,27,42,.05)}
 #work{background:linear-gradient(180deg,var(--bg),#f4f6f8)}
 #experience{background:radial-gradient(ellipse 40% 30% at 100% 0%,rgba(179,175,143,.16),transparent 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(65,90,119,.10),transparent 70%),var(--bg)}
+/* highlighter */
+mark.hl{color:inherit;padding:0 .12em;margin:0 -.04em;border-radius:.25em .7em .35em .8em;background:linear-gradient(100deg,rgba(194,85,58,0) 0,rgba(194,85,58,.30) 1.5%,rgba(194,85,58,.22) 97%,rgba(194,85,58,0) 100%) no-repeat 0 88%/0% 52%;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:hl .9s cubic-bezier(.3,.7,.4,1) forwards}
+mark.hl:nth-of-type(2){animation-delay:.35s}mark.hl:nth-of-type(3){animation-delay:.7s}
+@keyframes hl{to{background-size:100% 52%}}
+/* portrait decorations */
+.blob{position:absolute;inset:-26px -30px -22px -18px;background:linear-gradient(135deg,rgba(179,175,143,.75),rgba(194,85,58,.35) 70%,rgba(65,90,119,.35));border-radius:42% 58% 63% 37%/45% 40% 60% 55%;animation:morph 16s ease-in-out infinite;z-index:0}
+@keyframes morph{50%{border-radius:58% 42% 38% 62%/55% 62% 38% 45%;transform:rotate(8deg)}}
+.ring{position:absolute;inset:0;border:2px solid var(--navy);border-radius:50%;transform:translate(18px,16px);z-index:1;opacity:.75}
+.sticker{position:absolute;z-index:3;white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.86rem;font-weight:500;color:var(--navy);box-shadow:0 8px 20px rgba(13,27,42,.10);animation:bob 6s ease-in-out infinite}
+.sticker.s1{top:4%;left:-30%;rotate:-6deg}
+.sticker.s2{top:48%;right:-24%;rotate:5deg;animation-delay:-2s}
+.sticker.s3{bottom:-2%;left:-8%;rotate:-3deg;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+/* hero data decoration */
+.deco{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.deco .trend{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .3s ease-out forwards}
+.deco .trend2{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.6s .9s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.deco .pts circle{animation:float 9s ease-in-out infinite}
+.deco .pts circle:nth-child(3n){animation-duration:12s;animation-delay:-3s}
+.deco .pts circle:nth-child(3n+1){animation-duration:10s;animation-delay:-6s}
+@keyframes float{50%{transform:translateY(-10px)}}
+/* icon buttons */
+.icons{display:flex;gap:10px;align-items:center}
+.ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:#fff;color:var(--navy);transition:transform .15s,border-color .15s,color .15s}
+.ic:hover{transform:translateY(-2px);border-color:var(--pop);color:var(--pop)}
+.ic svg{width:19px;height:19px}
+.cta{align-items:center}
+/* highlights bar */
+.hi-bar{position:relative;z-index:3;list-style:none;margin:-44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px rgba(13,27,42,.08);overflow:hidden}
+.hi-bar li{padding:18px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.hi-bar li:last-child{border-right:0}
+.hi-bar b{font:700 1.08rem var(--display);color:var(--heading);display:flex;align-items:center;gap:8px}
+.hi-bar b::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--pop);rotate:45deg}
+.hi-bar span{font-size:.88rem;color:var(--muted)}
+/* impact numbers */
+.impact{padding:64px 0 8px}
+.impact-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.impact-head h2{font:700 1.6rem var(--display);margin:0;color:var(--heading)}
+.impact-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+.tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.tabs button{white-space:nowrap;font:500 .88rem var(--sans);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--pop),var(--khaki));transform:scaleX(var(--w,0));transform-origin:left;transition:transform 1s cubic-bezier(.3,.7,.4,1)}
+.stat .v{font:800 2.4rem var(--display);color:var(--heading);letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:.9rem;color:var(--muted);margin-top:4px}
 /* sections */
 section.block{padding:72px 0}
 .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:34px}
@@ -156,7 +212,7 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.cloud{animation:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.cloud,.blob,.sticker,.deco *{animation:none!important}.deco .trend,.deco .trend2{stroke-dashoffset:0}mark.hl{animation:none;background-size:100% 52%}html{scroll-behavior:auto}}
 
 @media (max-width:760px){
   .nav ul li.hide-sm{display:none}
@@ -185,29 +241,56 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 </nav>
 
 <header class="hero" id="top">
-  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
-  <span class="bird" style="top:70px;left:9%"></span>
-  <span class="bird" style="top:96px;left:30%;transform:scale(.8)"></span>
-  <span class="bird" style="top:84px;right:14%"></span>
-  <span class="bird" style="top:112px;right:12%;transform:scale(.75)"></span>
+  <svg class="deco" viewBox="0 0 1400 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="pts"><circle cx="453" cy="135" r="2.5" fill="#415A77" opacity="0.1"/><circle cx="512" cy="89" r="5" fill="#415A77" opacity="0.14"/><circle cx="120" cy="269" r="3" fill="#C2553A" opacity="0.1"/><circle cx="83" cy="343" r="3" fill="#C2553A" opacity="0.1"/><circle cx="69" cy="171" r="5" fill="#B3AF8F" opacity="0.14"/><circle cx="587" cy="330" r="5" fill="#415A77" opacity="0.18"/><circle cx="144" cy="346" r="3" fill="#415A77" opacity="0.18"/><circle cx="767" cy="91" r="2.5" fill="#C2553A" opacity="0.14"/><circle cx="953" cy="274" r="3.5" fill="#C2553A" opacity="0.22"/><circle cx="506" cy="184" r="3" fill="#415A77" opacity="0.14"/><circle cx="804" cy="323" r="3.5" fill="#B3AF8F" opacity="0.22"/><circle cx="853" cy="97" r="5" fill="#415A77" opacity="0.22"/><circle cx="1060" cy="136" r="4" fill="#415A77" opacity="0.22"/><circle cx="1347" cy="99" r="5" fill="#B3AF8F" opacity="0.18"/><circle cx="973" cy="357" r="5" fill="#415A77" opacity="0.22"/><circle cx="1176" cy="532" r="4" fill="#415A77" opacity="0.1"/><circle cx="1024" cy="215" r="5" fill="#B3AF8F" opacity="0.22"/><circle cx="1003" cy="504" r="3.5" fill="#C2553A" opacity="0.1"/><circle cx="498" cy="365" r="4" fill="#415A77" opacity="0.1"/><circle cx="1076" cy="125" r="3" fill="#C2553A" opacity="0.22"/><circle cx="1284" cy="308" r="3" fill="#C2553A" opacity="0.22"/><circle cx="769" cy="502" r="4" fill="#C2553A" opacity="0.18"/><circle cx="1381" cy="401" r="4" fill="#415A77" opacity="0.14"/><circle cx="116" cy="136" r="3" fill="#C2553A" opacity="0.1"/><circle cx="1164" cy="151" r="3.5" fill="#415A77" opacity="0.1"/><circle cx="587" cy="245" r="5" fill="#415A77" opacity="0.18"/><circle cx="967" cy="318" r="5" fill="#C2553A" opacity="0.1"/><circle cx="1259" cy="450" r="5" fill="#C2553A" opacity="0.22"/><circle cx="559" cy="112" r="4" fill="#415A77" opacity="0.1"/><circle cx="94" cy="164" r="3" fill="#B3AF8F" opacity="0.1"/><circle cx="841" cy="111" r="5" fill="#415A77" opacity="0.14"/><circle cx="1329" cy="367" r="2.5" fill="#C2553A" opacity="0.14"/><circle cx="208" cy="186" r="3.5" fill="#C2553A" opacity="0.18"/><circle cx="172" cy="484" r="4" fill="#C2553A" opacity="0.22"/><circle cx="437" cy="132" r="3.5" fill="#C2553A" opacity="0.18"/><circle cx="1160" cy="141" r="2.5" fill="#B3AF8F" opacity="0.14"/><circle cx="205" cy="332" r="2.5" fill="#415A77" opacity="0.18"/><circle cx="975" cy="191" r="3.5" fill="#B3AF8F" opacity="0.14"/><circle cx="1081" cy="326" r="5" fill="#415A77" opacity="0.18"/><circle cx="859" cy="454" r="3" fill="#C2553A" opacity="0.14"/><circle cx="1036" cy="173" r="5" fill="#B3AF8F" opacity="0.22"/><circle cx="1023" cy="555" r="3.5" fill="#B3AF8F" opacity="0.22"/><circle cx="271" cy="363" r="3.5" fill="#B3AF8F" opacity="0.22"/><circle cx="1337" cy="242" r="3" fill="#415A77" opacity="0.1"/><circle cx="658" cy="229" r="4" fill="#C2553A" opacity="0.1"/><circle cx="1273" cy="232" r="2.5" fill="#C2553A" opacity="0.1"/></g>
+    <path class="trend" d="M700 640 C 780 610, 840 630, 920 570 S 1060 520, 1140 500 S 1280 420, 1420 380" fill="none" stroke="#415A77" stroke-width="2" opacity=".22"/>
+    <path class="trend2" d="M760 660 C 860 640, 940 655, 1020 615 S 1180 590, 1260 560 S 1360 540, 1420 520" fill="none" stroke="#C2553A" stroke-width="1.6" stroke-dasharray="6 7" opacity=".28"/>
+  </svg>
   <div class="wrap hero-grid">
-    <div class="avatar"><div><img src="photo.jpg" alt="Eloise He" width="320" height="320"></div></div>
+    <div class="portrait">
+      <div class="blob"></div>
+      <div class="ring"></div>
+      <div class="avatar"><div><img src="photo.jpg" alt="Eloise He" width="320" height="320"></div></div>
+      <span class="sticker s1" data-i="st1">📊 Data @ Solid Ground</span>
+      <span class="sticker s2" data-i="st2">🔬 LAMDA, NJU</span>
+      <span class="sticker s3" data-i="st3">✏️ Fashion designer</span>
+    </div>
     <div class="hero-text">
     <span class="pill"><span data-i="pill">Statistics &amp; Informatics @ UW · Class of 2029</span></span>
     <h1>Eloise He</h1>
     <p class="role" data-i="role">Statistics Student &amp; Data Analyst</p>
-    <p class="lede" data-i="lede">I use data to answer real questions — from housing service gaps at a Seattle nonprofit to benchmarking machine-learning model reuse in research. Outside of that I build small, polished web apps people can actually use. Mainly working in Python, R, SQL and Tableau.</p>
+    <p class="lede" data-i="lede">I use data to answer real questions — from <mark class="hl">housing service gaps</mark> at a Seattle nonprofit to benchmarking <mark class="hl">machine-learning model reuse</mark> in research. Outside of that I build small, polished web apps people can actually use. Mainly working in <mark class="hl">Python, R, SQL</mark> and Tableau.</p>
     <div class="cta">
       <a class="btn primary" href="Eloise_He_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i="resume">Download Résumé</span></a>
-      <a class="btn" href="mailto:eloisehe8@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i="email">Email</span></a>
-      <a class="btn" href="https://github.com/xitong-eloise-he" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/xitong-he-2061763b2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+      <div class="icons">
+        <a class="ic" href="mailto:eloisehe8@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        <a class="ic" href="https://github.com/xitong-eloise-he" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+        <a class="ic" href="https://www.linkedin.com/in/xitong-he-2061763b2/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
+      </div>
     </div>
     </div>
   </div>
 </header>
 
+<div class="wrap">
+  <ul class="hi-bar">
+    <li><b>AIME</b><span data-i="h1">Qualifier · 2024</span></li>
+    <li><b>Hi-MCM</b><span data-i="h2">First Prize · 500+ teams</span></li>
+    <li><b>LAMDA, NJU</b><span data-i="h3">ML research assistant</span></li>
+    <li><b>Solid Ground</b><span data-i="h4">Data analyst</span></li>
+  </ul>
+</div>
+
 <main>
+<section class="impact" id="impact">
+  <div class="wrap">
+    <div class="impact-head reveal">
+      <div><h2 data-i="impTitle">Impact, in numbers</h2><p data-i="impSub">Pick a role to see what it added up to.</p></div>
+      <div class="tabs" role="tablist" id="impTabs"></div>
+    </div>
+    <div class="stats" id="impStats" aria-live="polite"></div>
+  </div>
+</section>
 <section class="block" id="work">
   <div class="wrap">
     <div class="sh reveal"><span class="n">01</span><h2 data-i="nWork">Work</h2></div>
@@ -444,7 +527,10 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 const ZH = {
   nWork:"作品", nAbout:"关于", nExp:"经历", nContact:"联系",
   pill:"华盛顿大学 统计学 &amp; 信息学 · 2029 届", role:"统计学学生 &amp; 数据分析师",
-  lede:"我用数据回答真实的问题——从西雅图非营利机构的住房服务缺口，到科研中的机器学习模型复用评测。课余我也做一些小而精致、真正能用的网页应用。主要使用 Python、R、SQL 和 Tableau。",
+  lede:"我用数据回答真实的问题——从西雅图非营利机构的<mark class=\"hl\">住房服务缺口</mark>，到科研中的<mark class=\"hl\">机器学习模型复用</mark>评测。课余我也做一些小而精致、真正能用的网页应用。主要使用 <mark class=\"hl\">Python、R、SQL</mark> 和 Tableau。",
+  st1:"📊 数据分析 @ Solid Ground", st2:"🔬 南京大学 LAMDA", st3:"✏️ 服装设计师",
+  h1:"资格 · 2024", h2:"一等奖 · 500+ 支队伍", h3:"机器学习科研助理", h4:"数据分析师",
+  impTitle:"用数字说话", impSub:"选一段经历，看看它带来了什么。",
   research:"科研", lTitle:"学件基准评测",
   lDesc:"在南京大学 LAMDA 组完成：为预训练模型的查找与复用搭建评测基准。在 10 个 UCI/OpenML 数据集上训练 30 个基模型并为每个生成统计规约，比较 4 种识别基线方法的准确率、运行时间和复用效果。",
   aboutText:`<p>你好！我是 Eloise（Xitong He），华盛顿大学学生，意向专业为统计学与信息学，预计 2029 年毕业（GPA 3.66）。</p>
@@ -503,6 +589,7 @@ function apply() {
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
   document.getElementById('lang').textContent = lang === 'zh' ? 'EN' : '中文';
   if (window.renderRepos) window.renderRepos();
+  if (window.renderStats) window.renderStats();
 }
 document.getElementById('lang').onclick = () => { lang = lang === 'zh' ? 'en' : 'zh'; try { localStorage.setItem('site-lang', lang); } catch (e) {} apply(); };
 apply();
@@ -555,6 +642,54 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => { repos = data; window.renderRepos(); try { localStorage.setItem(CACHE, JSON.stringify({ t: Date.now(), data })); } catch (e) {} })
     .catch(() => {});   // offline or rate-limited: keep the hand-made cards (and any cached repos)
+})();
+
+/* ---- Impact numbers ---- */
+(function () {
+  const DATA = [
+    { en: 'Solid Ground', zh: 'Solid Ground', s: [
+      { v: 1000, suf: '+', en: 'referral records analyzed', zh: '条转介记录分析' },
+      { v: 200, suf: '+', en: 'people supported in housing placement', zh: '人获得住房安置支持' },
+      { v: 30, suf: '%', en: 'less monthly reporting time', zh: '月度报告时间缩短' },
+      { v: 3, en: 'program teams on live dashboards', zh: '个项目团队用上实时仪表盘' } ] },
+    { en: 'LAMDA research', zh: 'LAMDA 科研', s: [
+      { v: 10, en: 'datasets benchmarked', zh: '个数据集' },
+      { v: 30, en: 'models trained', zh: '个模型' },
+      { v: 120, en: 'experiments run', zh: '组实验' },
+      { v: 4, en: 'baselines compared', zh: '种基线方法对比' } ] },
+    { en: 'Teaching', zh: '教学', s: [
+      { v: 20, en: 'TOEFL students tutored', zh: '名托福学生' },
+      { v: 15, pre: '+', en: 'average TOEFL point gain', zh: '托福平均提分' },
+      { v: 30, suf: '+', en: 'peers tutored in calc & stats', zh: '名同学接受微积分与统计辅导' },
+      { v: 80, suf: '%', en: 'of those peers raised their grades', zh: '的同学成绩提高' } ] }
+  ];
+  const tabs = document.getElementById('impTabs'), box = document.getElementById('impStats');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = 0, seen = false;
+  const fmt = n => n.toLocaleString('en-US');
+  function count(el, to, pre, suf) {
+    if (still || !seen) { el.textContent = pre + fmt(to) + suf; return; }
+    const t0 = performance.now(), d = 900;
+    (function step(t) { const k = Math.min(1, (t - t0) / d), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = pre + fmt(Math.round(to * e)) + suf; if (k < 1) requestAnimationFrame(step); })(t0);
+  }
+  function show(i) {
+    cur = i; const zh = lang === 'zh';
+    tabs.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-selected', j === i));
+    box.innerHTML = DATA[i].s.map(x => `<div class="stat"><div class="v">0</div><div class="l">${zh ? x.zh : x.en}</div></div>`).join('');
+    box.querySelectorAll('.stat').forEach((el, j) => {
+      const x = DATA[i].s[j]; count(el.querySelector('.v'), x.v, x.pre || '', x.suf || '');
+      requestAnimationFrame(() => el.style.setProperty('--w', seen ? (0.35 + 0.65 * (j + 1) / 4) : 0));
+    });
+  }
+  window.renderStats = function () {
+    const zh = lang === 'zh';
+    tabs.innerHTML = DATA.map((d, j) => `<button role="tab" aria-selected="${j === cur}">${zh ? d.zh : d.en}</button>`).join('');
+    tabs.querySelectorAll('button').forEach((b, j) => b.onclick = () => show(j));
+    show(cur);
+  };
+  window.renderStats();
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { seen = true; show(cur); o.disconnect(); } }, { threshold: .3 }).observe(box);
 })();
 
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
