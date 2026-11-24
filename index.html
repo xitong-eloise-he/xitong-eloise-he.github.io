@@ -294,8 +294,51 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 <section class="block" id="work">
   <div class="wrap">
     <div class="sh reveal"><span class="n">01</span><h2 data-i="nWork">Work</h2></div>
-    <p class="sub reveal"><span data-i="projects">Projects</span><b id="projCount">4</b></p>
+    <p class="sub reveal"><span data-i="projects">Projects</span><b id="projCount">6</b></p>
     <div class="grid" id="grid">
+
+      <article class="card reveal">
+        <div class="thumb" style="background:#f0f3f6">
+          <svg viewBox="0 0 320 180" aria-hidden="true">
+            <g fill="#7f95ae"><rect x="60" y="30" width="200" height="18" rx="4"/></g>
+            <rect x="60" y="56" width="120" height="18" rx="4" fill="#7f95ae" opacity=".85"/>
+            <rect x="60" y="82" width="64" height="18" rx="4" fill="#B3AF8F"/>
+            <rect x="60" y="108" width="40" height="18" rx="4" fill="#C2553A" opacity=".85"/>
+            <rect x="60" y="134" width="22" height="18" rx="4" fill="#415A77"/>
+            <g font-family="Outfit,sans-serif" font-size="10" fill="#1B263B"><text x="190" y="69">23%</text><text x="132" y="95">5%</text><text x="108" y="121">2%</text><text x="90" y="147">1.6%</text></g>
+          </svg>
+        </div>
+        <div class="cb">
+          <span class="yr">2026 · <span data-i="analysis">Analysis</span></span>
+          <h3><a href="/ga4-funnel-analysis/dashboard/" target="_blank" rel="noopener" data-i="fTitle">E-commerce Funnel &amp; Retention ↗</a></h3>
+          <p data-i="fDesc">4.3M GA4 events from Google's Merchandise Store: conversion funnel, weekly cohort retention, first- vs last-touch attribution and RFM segments in SQL, ending in three fixes ranked by revenue impact, each with an A/B test design.</p>
+          <div class="links"><a href="/ga4-funnel-analysis/dashboard/" target="_blank" rel="noopener" data-i="dash">Dashboard</a><a href="https://github.com/xitong-eloise-he/ga4-funnel-analysis" target="_blank" rel="noopener" data-i="code">Code</a></div>
+          <div class="tags"><span>SQL</span><span>DuckDB</span><span>Window functions</span><span>A/B testing</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="thumb" style="background:#f5f4ee">
+          <svg viewBox="0 0 320 180" aria-hidden="true">
+            <rect x="40" y="34" width="110" height="34" rx="10" fill="#fff" stroke="#c9c5aa"/><rect x="52" y="45" width="64" height="4" rx="2" fill="#B3AF8F"/><rect x="52" y="54" width="44" height="4" rx="2" fill="#dcdacb"/>
+            <rect x="60" y="80" width="110" height="34" rx="10" fill="#fff" stroke="#c9c5aa"/><rect x="72" y="91" width="70" height="4" rx="2" fill="#7f95ae"/><rect x="72" y="100" width="40" height="4" rx="2" fill="#dcdacb"/>
+            <rect x="40" y="126" width="110" height="34" rx="10" fill="#fff" stroke="#c9c5aa"/><rect x="52" y="137" width="58" height="4" rx="2" fill="#C2553A" opacity=".8"/><rect x="52" y="146" width="50" height="4" rx="2" fill="#dcdacb"/>
+            <path d="M178 97h22" stroke="#1B263B" stroke-width="2" marker-end="url(#ar)"/>
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1B263B"/></marker></defs>
+            <rect x="208" y="52" width="76" height="92" rx="6" fill="#fff" stroke="#1B263B" stroke-width="1.5"/>
+            <text x="246" y="72" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="700" fill="#0D1B2A">PRD</text>
+            <g fill="#dcdacb"><rect x="218" y="82" width="56" height="4" rx="2"/><rect x="218" y="92" width="44" height="4" rx="2"/><rect x="218" y="102" width="52" height="4" rx="2"/><rect x="218" y="112" width="36" height="4" rx="2"/></g>
+            <rect x="218" y="124" width="30" height="10" rx="3" fill="#7f95ae"/>
+          </svg>
+        </div>
+        <div class="cb">
+          <span class="yr">2026 · <span data-i="product">Product</span></span>
+          <h3><a href="/app-review-insights/report/" target="_blank" rel="noopener" data-i="rTitle">Why Duolingo Users Leave ↗</a></h3>
+          <p data-i="rDesc">174k Google Play reviews of Duolingo and four competitors, with a stratified sample tagged by an LLM for pain points and switching intent. Tracks complaints by release, maps where users go, and ends in a full PRD with metrics and an experiment plan.</p>
+          <div class="links"><a href="/app-review-insights/report/" target="_blank" rel="noopener" data-i="report">Report</a><a href="https://github.com/xitong-eloise-he/app-review-insights/blob/main/docs/PRD.md" target="_blank" rel="noopener">PRD</a><a href="https://github.com/xitong-eloise-he/app-review-insights" target="_blank" rel="noopener" data-i="code">Code</a></div>
+          <div class="tags"><span>Python</span><span>Claude API</span><span>Web scraping</span><span>Product strategy</span></div>
+        </div>
+      </article>
 
       <article class="card reveal">
         <div class="thumb" style="background:#f5f4ee">
@@ -575,7 +618,9 @@ const ZH = {
   gTitle:"五子棋 ↗", gDesc:"浏览器里的五子棋：可以和三档难度的机器人下，可以和朋友同屏对弈，也可以用房间链接和另一台电脑上的人联机。",
   sTitle:"数独 ↗", sDesc:"按解题所需的技巧给题目分级，从唯一数一直到强制链；点提示会讲清楚下一步的完整推理。",
   tTitle:"树洞 ↗", tDesc:"匿名分享社区，支持邮箱验证码登录、发帖、评论和管理功能，后端是托管的 Postgres 数据库。",
-  play:"开始玩", code:"源代码", visit:"访问",
+  play:"开始玩", code:"源代码", visit:"访问", dash:"看仪表盘", report:"看报告", analysis:"数据分析", product:"产品",
+  fTitle:"电商漏斗与留存分析 ↗", fDesc:"基于 Google 商品店 430 万条 GA4 事件，用 SQL 做转化漏斗、周留存矩阵、首次/末次触点归因和 RFM 分群，最后给出按收入影响排序的三条改进建议，每条都附 A/B 实验设计。",
+  rTitle:"Duolingo 用户为什么流失 ↗", rDesc:"抓取 Duolingo 及四个竞品的 17.4 万条 Google Play 评论，用 LLM 给分层样本打痛点和流失意向标签，按版本追踪抱怨变化、找出用户流向，最后写成一份含指标和实验计划的完整 PRD。",
   tools:"编程", langs:"语言", en:"英语（流利）", zh:"普通话（母语）",
   cTitle:"聊聊吧", cDesc:"欢迎实习机会、合作，或者只是聊聊你在做的东西。"
 };
@@ -599,7 +644,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 (function () {
   const USER = 'xitong-eloise-he';
   // Repos already shown as hand-made cards above, plus this site's own repo.
-  const SKIP = new Set(['gomoku', 'sudoku', 'treehole', USER + '.github.io']);
+  const SKIP = new Set(['gomoku', 'sudoku', 'treehole', 'ga4-funnel-analysis', 'app-review-insights', USER + '.github.io']);
   const HIDE_TOPIC = 'hide-from-site';   // add this topic on GitHub to keep a repo off the site
   const PALETTE = [['#e3e5e0','#c9c5aa'], ['#e3e8ee','#7f95ae'], ['#e6e3d3','#c9c5aa'], ['#e6e3d3','#B3AF8F'], ['#e0e1dd','#9fb0c4']];
   const CACHE = 'gh-repos-v1';
